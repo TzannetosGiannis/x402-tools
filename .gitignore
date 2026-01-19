@@ -1,2 +1,4 @@
 .env
 node_modules/
+.opencode/node_modules
+.opencode/x402-tools.json

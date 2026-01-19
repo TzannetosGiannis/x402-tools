@@ -7,6 +7,7 @@ import { createWalletClient, http } from "viem"
 import { privateKeyToAccount } from "viem/accounts"
 import { base } from "viem/chains"
 import { readFile } from "fs/promises"
+import { join } from "path"
 
 const BASE_URL = "https://agents.402box.io"
 const X_SEARCHER_PATH = "/x_searcher"
@@ -14,7 +15,7 @@ const FIND_PEOPLE_PATH = "/find_people"
 const TIMEOUT_MS = 300000
 
 const getPrivateKey = async (): Promise<`0x${string}`> => {
-  const configPath = new URL("../x402-tools.json", import.meta.url)
+  const configPath = join(process.cwd(), ".opencode", "x402-tools.json")
   try {
     const contents = await readFile(configPath, "utf-8")
     const parsed = JSON.parse(contents) as { private_key?: string }
@@ -28,7 +29,7 @@ const getPrivateKey = async (): Promise<`0x${string}`> => {
     }
   }
 
-  loadEnv({ path: new URL("../../.env", import.meta.url) })
+  loadEnv({ path: join(process.cwd(), ".env") })
   const key = process.env.X402_PRIVATE_KEY
   if (!key) {
     throw new Error(
