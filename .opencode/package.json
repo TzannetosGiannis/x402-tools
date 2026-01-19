@@ -1,0 +1,12 @@
+{
+  "name": "x402-tools-plugin",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.1.25",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.26",
+    "x402-axios": "^1.1.0"
+  }
+}
