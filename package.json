@@ -1,12 +1,19 @@
 {
   "name": "@itzannetos/x402-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "index.ts",
   "files": [
     "index.ts",
     ".opencode/plugins/x402-tools.ts",
     "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "plugin",
+    "agents",
+    "llm",
+    "x402"
   ],
   "dependencies": {
     "@opencode-ai/plugin": "^1.1.25",
