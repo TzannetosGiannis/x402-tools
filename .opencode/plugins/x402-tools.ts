@@ -69,9 +69,17 @@ export const X402ToolsPlugin: Plugin = async () => {
           const privateKey = await getPrivateKey()
           const client = createPaymentClient(privateKey)
 
-          const response = await client.post(X_SEARCHER_PATH, {
-            message: args.query,
-          })
+          let response
+          try {
+            response = await client.post(X_SEARCHER_PATH, {
+              message: args.query,
+            })
+          } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 402) {
+              throw new Error("Not enough USDC in your wallet, please top up")
+            }
+            throw error
+          }
 
           if (!response.data?.data?.response) {
             throw new Error("Unexpected response from X Searcher")
@@ -90,9 +98,17 @@ export const X402ToolsPlugin: Plugin = async () => {
           const privateKey = await getPrivateKey()
           const client = createPaymentClient(privateKey)
 
-          const response = await client.post(FIND_PEOPLE_PATH, {
-            message: args.query,
-          })
+          let response
+          try {
+            response = await client.post(FIND_PEOPLE_PATH, {
+              message: args.query,
+            })
+          } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 402) {
+              throw new Error("Not enough USDC in your wallet, please top up")
+            }
+            throw error
+          }
 
           if (!response.data?.data?.response) {
             throw new Error("Unexpected response from Find People")

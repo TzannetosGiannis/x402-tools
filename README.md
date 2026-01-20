@@ -88,7 +88,7 @@ Before installing this plugin, ensure you have:
 }
 ```
 
-**OR** set it in `.env` at the project root:
+**OR** set it in `.env` at the project root (necessary on Windows):
 
 ```env
 X402_PRIVATE_KEY=0x...
@@ -115,7 +115,7 @@ bun install
 }
 ```
 
-**OR** set it in `.env` at the project root:
+**OR** set it in `.env` at the project root (necessary on Windows):
 
 ```env
 X402_PRIVATE_KEY=0x...
@@ -331,4 +331,3 @@ For issues, questions, or contributions:
 - Find People tool for OSINT research
 - X402 payment integration
 - Base network support
-I want to add that this repo is developed and managed by 402box.io , email of contact is george@402box.io. also add pricing for each. x-search is 0.05 and find_people 0.15 USDC 
