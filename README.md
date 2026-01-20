@@ -37,14 +37,17 @@ X402_PRIVATE_KEY=0x...
 ## Local Installation
 
 1. Ensure Bun is installed.
-2. Install dependencies for local plugins:
+2. Place the plugin file in your project at `.opencode/plugins/x402-tools.ts` if you are using a local copy.
+3. Install dependencies for local plugins:
 
 ```bash
-cd /Users/itzannet/Documents/GitHub/x402-tools-plugin/.opencode
+cd /path/to/your/project/.opencode
 bun install
 ```
 
-3. Create `.opencode/x402-tools.json` with your key:
+4. If `.opencode/package.json` already exists, merge dependencies instead of overwriting it.
+5. If `.opencode/bun.lock` already exists, let Bun update it instead of deleting it.
+6. Create `.opencode/x402-tools.json` with your key:
 
 ```json
 {
@@ -52,13 +55,13 @@ bun install
 }
 ```
 
-4. Or set it in `.env` at the project root:
+7. Or set it in `.env` at the project root:
 
 ```
 X402_PRIVATE_KEY=0x...
 ```
 
-5. Restart OpenCode so the plugin is loaded.
+8. Restart OpenCode so the plugin is loaded.
 
 ## Usage
 
