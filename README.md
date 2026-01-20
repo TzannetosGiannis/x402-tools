@@ -65,7 +65,7 @@ Before installing this plugin, ensure you have:
 1. **OpenCode** - The AI coding assistant (https://opencode.ai)
 2. **Bun** - JavaScript runtime (https://bun.sh) - Required for local plugin development
 3. **Ethereum Wallet** - A private key with funds on the Base network
-4. **Base Network ETH** - Small amount of ETH on Base for payment transactions
+4. **Base Network ETH** - Small amount of USDC on Base for payment transactions (NO gas needed)
 
 ## Installation
 
@@ -308,6 +308,14 @@ x402-tools/
 ## License
 
 Check the package repository for license information.
+
+## Coming Soon
+
+We are actively adding more agents and tools in the coming days. Stay tuned for updates!
+
+## Add Your Own Agent
+
+Want to add your own x402 agent to this package? Contact us at george@402box.io to discuss integration.
 
 ## Support
 
