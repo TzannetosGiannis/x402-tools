@@ -12,6 +12,7 @@ import { join } from "path"
 const BASE_URL = "https://agents.402box.io"
 const X_SEARCHER_PATH = "/x_searcher"
 const FIND_PEOPLE_PATH = "/find_people"
+const DEFI_ALPHA_PATH = "/defi_alpha"
 const TIMEOUT_MS = 300000
 
 const getPrivateKey = async (): Promise<`0x${string}`> => {
@@ -112,6 +113,35 @@ export const X402ToolsPlugin: Plugin = async () => {
 
           if (!response.data?.data?.response) {
             throw new Error("Unexpected response from Find People")
+          }
+
+          return response.data.data.response
+        },
+      }),
+      defi_alpha: tool({
+        description:
+          "Market Oracle - Searches the web, GitHub, Reddit, and X to gather intelligence on prediction market events. Helps you make educated decisions on Polymarket and Kalshi.",
+        args: {
+          query: tool.schema.string(),
+        },
+        async execute(args) {
+          const privateKey = await getPrivateKey()
+          const client = createPaymentClient(privateKey)
+
+          let response
+          try {
+            response = await client.post(DEFI_ALPHA_PATH, {
+              message: args.query,
+            })
+          } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 402) {
+              throw new Error("Not enough USDC in your wallet, please top up")
+            }
+            throw error
+          }
+
+          if (!response.data?.data?.response) {
+            throw new Error("Unexpected response from Market Oracle")
           }
 
           return response.data.data.response

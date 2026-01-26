@@ -58,6 +58,23 @@ Neural and deep search capabilities that go beyond standard search engines to fi
 **Output format:**
 Returns structured summaries with key details (career, education, notable works) and numbered source citations for verification.
 
+### 📊 `defi_alpha`
+
+**Price: 0.03 USDC per request**
+
+Market Oracle that searches the web, GitHub, Reddit, and X to gather intelligence on prediction market events.
+
+**Use cases:**
+- Evaluate Polymarket and Kalshi event outcomes
+- Track market-moving narratives and rumors
+- Compare sentiment across community sources
+- Surface relevant links and sources fast
+
+**Example queries:**
+- "Polymarket odds on the 2026 US election"
+- "Kalshi contract chatter around CPI release"
+- "Narratives driving ETH ETF approval odds"
+
 ## Prerequisites
 
 Before installing this plugin, ensure you have:
@@ -171,6 +188,16 @@ Use the find_people tool to research "Jane Doe, head of AI at ExampleCorp"
 
 ```
 Find information about "Elon Musk, CEO of Tesla"
+```
+
+### Using Market Oracle
+
+```
+Use the defi_alpha tool to analyze "Polymarket odds on the next Fed rate decision"
+```
+
+```
+Analyze "Kalshi event chatter around the next CPI release"
 ```
 
 The AI will automatically use the appropriate tool, handle the payment, and return the results.
