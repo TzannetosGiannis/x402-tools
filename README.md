@@ -14,6 +14,11 @@ X402 is a payment protocol that enables micropayments for API calls using blockc
 
 ## Available Tools
 
+**Costs (Base, USDC):**
+- `x_searcher`: 0.05 USDC per request
+- `find_people`: 0.15 USDC per request
+- `alpha_finder`: 0.03 USDC per request
+
 ### 🔍 `x_searcher`
 
 **Price: 0.05 USDC per request**
@@ -227,6 +232,7 @@ OpenCode → Plugin → X402 Payment Client → AI Service API
 - **Endpoints**:
   - `/x_searcher` - X/Twitter search agent
   - `/find_people` - OSINT research agent
+  - `/alpha_finder` - Market Oracle for prediction market intelligence
 - **Timeout**: 300 seconds (5 minutes) per request
 - **Blockchain**: Base (Ethereum L2)
 - **Payment Protocol**: X402 (blockchain-based micropayments)
