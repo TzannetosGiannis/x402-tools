@@ -58,7 +58,7 @@ Neural and deep search capabilities that go beyond standard search engines to fi
 **Output format:**
 Returns structured summaries with key details (career, education, notable works) and numbered source citations for verification.
 
-### 📊 `defi_alpha`
+### 📊 `alpha_finder`
 
 **Price: 0.03 USDC per request**
 
@@ -193,7 +193,7 @@ Find information about "Elon Musk, CEO of Tesla"
 ### Using Market Oracle
 
 ```
-Use the defi_alpha tool to analyze "Polymarket odds on the next Fed rate decision"
+Use the alpha_finder tool to analyze "Polymarket odds on the next Fed rate decision"
 ```
 
 ```
