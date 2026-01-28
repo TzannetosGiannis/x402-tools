@@ -12,7 +12,7 @@ import { join } from "path"
 const BASE_URL = "https://agents.402box.io"
 const X_SEARCHER_PATH = "/x_searcher"
 const FIND_PEOPLE_PATH = "/find_people"
-const ALPHA_FINDER_PATH = "/defi_alpha"
+const ALPHA_FINDER_PATH = "/alpha_finder"
 const TIMEOUT_MS = 300000
 
 const getPrivateKey = async (): Promise<`0x${string}`> => {
